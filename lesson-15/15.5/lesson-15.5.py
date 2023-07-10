@@ -9,7 +9,7 @@
 # Урок 15.5 - Шифр Цезаря                       #
 # Шаг 1-10                                      #
 #-----------------------------------------------#
-
+'''
 alphabets = [32, 26]
 limits = {'lower': {0: ['я', 'z'], 1: ['а', 'a']},
           'upper': {0: ['Я', 'Z'], 1: ['', 'A']}}
@@ -53,4 +53,41 @@ for char in initial_phrase:
 
     result_phrase += chr(new_char)
 
-print(f'Конечная фраза: {result_phrase}')
+print(f'Конечная фраза: {result_phrase}') '''
+
+#-----------------------------------------------#
+# Урок 15.5 - Шифр Цезаря                       #
+# Шаг 10                                        #
+#-----------------------------------------------#
+alphabet = 26
+limits = {'lower': 'z', 'upper': 'Z'}
+
+string_to_code = input("Введите строку для шифрования: ").split()
+print(string_to_code)
+result_string = ''
+
+def get_limit(char):
+    if char.isupper():      limit = ord(limits['upper'])
+    elif char.islower():    limit = ord(limits['lower'])
+    return limit
+
+def get_new_char(char, shift_step):
+    new_char = ord(char)
+    if char.isalpha():
+        current_shift_step = shift_step
+        limit = get_limit(char)
+        if ord(char) + shift_step > limit:
+            current_shift_step = shift_step - alphabet
+        new_char = ord(char) + current_shift_step
+    return new_char
+
+for word in string_to_code:
+    shift_step = 0
+    for char in word:
+        if char.isalpha():
+            shift_step += 1
+    for char in word:
+        if char.isalpha:
+            result_string += chr(get_new_char(char, shift_step))
+    result_string += ' '
+print(result_string)
