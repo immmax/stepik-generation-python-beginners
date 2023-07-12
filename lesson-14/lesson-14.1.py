@@ -36,6 +36,30 @@
 #-----------------------------------------------#
 # Задача 14.3                                   #
 #-----------------------------------------------#
-from math import factorial
-def compute_binom(n, k):
-    return factorial(n) // (factorial(k) * factorial(n - k))
+# from math import factorial
+# def compute_binom(n, k):
+#     return factorial(n) // (factorial(k) * factorial(n - k))
+
+#-----------------------------------------------#
+# Задача 14.4                                   #
+#-----------------------------------------------#
+digit_1 = ['один', 'два', 'три', 'четыре', 'пять', 'шесть', 'семь', 'восемь', 'девять']
+digit_2 = ['десять', 'двадцать', 'тридцать', 'сорок', 'пятьдесят',
+           'шестьдесят', 'семьдесят', 'восемьдесят', 'девяносто']
+teens = ['одиннадцать', 'двенадцать', 'тринадцать', 'четырнадцать', 'пятнадцать',
+         'шестнадцать', 'семнадцать', 'восемнадцать', 'девятнадцать']
+
+def number_to_words(num):
+    result = ''
+    if num < 10:
+        result = digit_1[num - 1]
+    elif 11 <= num < 20:
+        result = teens[num % 10 - 1]
+    else:
+        result = digit_2[num // 10 - 1]
+        if num % 10 != 0:
+            result += ' ' + digit_1[num % 10 - 1]
+    return result
+
+for i in range(1, 100):
+    print(number_to_words(i))
