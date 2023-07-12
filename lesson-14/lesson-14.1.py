@@ -10,13 +10,25 @@
 #                                               #
 #-----------------------------------------------#
 
-def draw_triangle():
-    for i in range(1, 9):
-        for j in range(0, 7+i):
-            if j < 8-i:
-                print('_', end='')
-            else:
-                print('*', end='')
-        print()
+#-----------------------------------------------#
+# Задача 14.1                                   #
+#-----------------------------------------------#
+# def draw_triangle():
+#     for i in range(1, 9):
+#         for j in range(0, 7+i):
+#             if j < 8-i:
+#                 print(' ', end='')
+#             else:
+#                 print('*', end='')
+#         print()
 
-draw_triangle()
+# draw_triangle()
+
+#-----------------------------------------------#
+# Задача 14.2                                   #
+#-----------------------------------------------#
+def get_shipping_cost(quantity):
+    return 1000 + 120 * (quantity - 1)
+
+print(get_shipping_cost(1))
+print(get_shipping_cost(3))
