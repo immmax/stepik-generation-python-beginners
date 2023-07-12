@@ -67,16 +67,23 @@
 #-----------------------------------------------#
 # Задача 14.5                                   #
 #-----------------------------------------------#
-month = {
-    'ru': ['январь', 'февраль', 'март', 'апрель',
-           'май', 'июнь', 'июль', 'август',
-           'сентябрь', 'октябрь', 'ноябрь', 'декабрь'],
+# month = {
+#     'ru': ['январь', 'февраль', 'март', 'апрель',
+#            'май', 'июнь', 'июль', 'август',
+#            'сентябрь', 'октябрь', 'ноябрь', 'декабрь'],
 
-    'en': ['january', 'february', 'march', 'april',
-           'may', 'june', 'july', 'august',
-           'september', 'october', 'november', 'december']
-}
-def get_month(language, number):
-    return month[language][number - 1]
+#     'en': ['january', 'february', 'march', 'april',
+#            'may', 'june', 'july', 'august',
+#            'september', 'october', 'november', 'december']
+# }
+# def get_month(language, number):
+#     return month[language][number - 1]
 
-print(get_month('ru', 1))
+# print(get_month('ru', 1))
+
+#-----------------------------------------------#
+# Задача 14.6                                   #
+#-----------------------------------------------#
+def is_magic(date):
+    date = date.split('.')
+    return int(date[0]) * int(date[1]) == int(date[2][-2:])
