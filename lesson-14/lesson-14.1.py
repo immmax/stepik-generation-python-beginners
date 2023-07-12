@@ -27,8 +27,15 @@
 #-----------------------------------------------#
 # Задача 14.2                                   #
 #-----------------------------------------------#
-def get_shipping_cost(quantity):
-    return 1000 + 120 * (quantity - 1)
+# def get_shipping_cost(quantity):
+#     return 1000 + 120 * (quantity - 1)
 
-print(get_shipping_cost(1))
-print(get_shipping_cost(3))
+# print(get_shipping_cost(1))
+# print(get_shipping_cost(3))
+
+#-----------------------------------------------#
+# Задача 14.3                                   #
+#-----------------------------------------------#
+from math import factorial
+def compute_binom(n, k):
+    return factorial(n) // (factorial(k) * factorial(n - k))
